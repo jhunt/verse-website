@@ -1,0 +1,27 @@
+#
+#
+#           Welcome to Verse!
+#
+#
+# This is your site.yml file, which lives in the .verse directory.
+# All of your metadata and content is kept alongside this file, and
+# verse parses, assembles and formats the final site in htdocs/.
+#
+# To get started, you will probably want to change the title of
+# your site, and maybe select a different theme!
+#
+
+site:
+  title: verse - web site poetry
+  theme: default
+
+#
+# P.S. If you want to get started adding content to your site,
+# you'll be interested in the files under .verse/data:
+#
+#  - .verse/data/pages - Standalone pages (index, About, etc.)
+#  - .verse/data/blog  - Articles in a weblog
+#
+#
+# Happy Hacking!
+# - The Verse Team

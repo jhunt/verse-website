@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+
+use Verse qw/verse/;
+use Verse::Theme;
+use File::Find;
+use List::Util qw/max/;
+
+dir "{site}";
+copy "{theme}/assets/*" if exist "{theme}/assets";
+copy "{root}/content"   if exist "{root}/content";
+copy "{root}/static/*"  if exist "{root}/static";
+
+for my $page (page->read_all) {
+	render $page,
+		using => $page->attrs->{template} || "page.tt",
+		at    => "{site}{permalink}";
+}
+
+print "\n\nVisit at \x1b[34;5;2m".verse->{site}{url}."/index.html\x1b[0m\n"
+	if verse->{site}{url};
+
+1;

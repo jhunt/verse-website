@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,target-densitydpi=device-dpi" />
+<title>[% site.title %]</title>
+<link rel="stylesheet" href="[% site.url %]/css/layout.css">
+</head>
+<body>
+
+<header>
+	<h1>verse</h1>
+	<nav><li><a href="http://github.com/filefrog/verse">code</a>
+	</li><li><a href="[% site.url %]/learn">learn</a>
+	</li><li><a href="[% site.url %]/docs">docs</a>
+	</li></nav>
+</header>
+<div id="m">[% content %]</div>
+<footer>
+	<nav><li><a href="http://github.com/filefrog/verse">code</a>
+	</li><li><a href="[% site.url %]/learn">learn</a>
+	</li><li><a href="[% site.url %]/docs">docs</a>
+	</li></nav>
+	<div class="outro">verse</div>
+	<div class="copy">Copyright &copy; 2011-2014, James Hunt</div>
+</footer>
+<script type="text/javascript" src="[% site.url %]/js/jquery.js"></script>
+<script type="text/javascript" src="[% site.url %]/js/ui.js"></script>
+</body>
+</html>

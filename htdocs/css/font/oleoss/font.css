@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'OleoScriptSwashRegular';
+    src: url('oleoss.eot');
+    src: url('oleoss.eot?#iefix') format('embedded-opentype'),
+         url('oleoss.woff2') format('woff2'),
+         url('oleoss.woff') format('woff'),
+         url('oleoss.ttf') format('truetype'),
+         url('oleoss.svg#OleoScriptSwashRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
