@@ -10,8 +10,7 @@ use List::Util qw/max/;
 
 dir "{site}";
 copy "{theme}/assets/*" if exist "{theme}/assets";
-copy "{root}/content"   if exist "{root}/content";
-copy "{root}/static/*"  if exist "{root}/static";
+copy "{root}/content/*" if exist "{root}/content";
 
 for my $page (page->read_all) {
 	render $page,
