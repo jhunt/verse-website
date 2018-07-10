@@ -19,4 +19,4 @@ URL scheme, design your template, choose your fonts and CSS, etc.
 
 Then, author your content (as a set of YAML + markdown files), and let
 **verse** generate your new website, all as static HTML.  No application
-server process, nothing but regular old files you can server up with nginx.
+server process, nothing but regular old files you can serve up with nginx.
