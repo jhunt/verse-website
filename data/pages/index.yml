@@ -20,3 +20,45 @@ URL scheme, design your template, choose your fonts and CSS, etc.
 Then, author your content (as a set of YAML + markdown files), and let
 **verse** generate your new website, all as static HTML.  No application
 server process, nothing but regular old files you can serve up with nginx.
+
+## Getting Started
+
+To install **Verse** on your development machine, please do either of the following:
+
+### On macOS
+
+    brew tap jhunt/hacks; brew install verse
+
+### On Linux
+
+Grab the latest release tarball from the Github repository, [here](https://github.com/jhunt/verse/releases).
+
+Once that's done, initialize your new **verse** with:
+
+    cd /path/to/parent
+    mkdir your-site; cd your-site
+    git init
+    verse new
+
+This creates the directory for your site's `git` repository and initializes the **verse** site. When you run `verse new`, 
+you'll be prompted to add some basic information for your site such as the site title and the URL. If you need to edit 
+this information later, it's stored in the `site.yml` file in the site's root directory which looks like:
+
+    ls your-site
+    data  htdocs  site.yml  theme
+
+Website pages are maintained in the `data` directory - blog posts under `blog` and static pages under `pages`. The YAML template 
+allows you to specify the title, date, etc. and then supply the Markdown for your content. Once you have completed a given post or 
+page's YAML file, run `verse build` to build the updated website. You can preview your updated site with `verse run`, which runs
+a small webserver:
+
+    cd /path/to/parent/your-site
+    verse run
+
+To see your site, go to `127.0.0.1:4000` in your browser. As a tip, when developing locally try using `tmux` and leave `verse run` 
+open in a second window while working on your site. Then every time you run `verse build` you only need to refresh the page in 
+your browser.
+
+To add additional asset files to your blog posts and/or static pages, e.g. images, you can add a `content` and/or `static` 
+directories in your project's root directory. The path you should use to reference your files should be either `/content` or `/static`, 
+as applies.
