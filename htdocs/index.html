@@ -31,6 +31,52 @@ URL scheme, design your template, choose your fonts and CSS, etc.</p>
 <p>Then, author your content (as a set of YAML + markdown files), and let
 <strong>verse</strong> generate your new website, all as static HTML.  No application
 server process, nothing but regular old files you can serve up with nginx.</p>
+
+<h2>Getting Started</h2>
+
+<p>To install <strong>Verse</strong> on your development machine, please do either of the following:</p>
+
+<h3>On macOS</h3>
+
+<pre><code>brew tap jhunt/hacks; brew install verse
+</code></pre>
+
+<h3>On Linux</h3>
+
+<p>Grab the latest release tarball from the Github repository, <a href="https://github.com/jhunt/verse/releases">here</a>.</p>
+
+<p>Once that's done, initialize your new <strong>verse</strong> with:</p>
+
+<pre><code>cd /path/to/parent
+mkdir your-site; cd your-site
+git init
+verse new
+</code></pre>
+
+<p>This creates the directory for your site's <code>git</code> repository and initializes the <strong>verse</strong> site. When you run <code>verse new</code>, 
+you'll be prompted to add some basic information for your site such as the site title and the URL. If you need to edit 
+this information later, it's stored in the <code>site.yml</code> file in the site's root directory which looks like:</p>
+
+<pre><code>ls your-site
+data  htdocs  site.yml  theme
+</code></pre>
+
+<p>Website pages are maintained in the <code>data</code> directory - blog posts under <code>blog</code> and static pages under <code>pages</code>. The YAML template 
+allows you to specify the title, date, etc. and then supply the Markdown for your content. Once you have completed a given post or 
+page's YAML file, run <code>verse build</code> to build the updated website. You can preview your updated site with <code>verse run</code>, which runs
+a small webserver:</p>
+
+<pre><code>cd /path/to/parent/your-site
+verse run
+</code></pre>
+
+<p>To see your site, go to <code>127.0.0.1:4000</code> in your browser. As a tip, when developing locally try using <code>tmux</code> and leave <code>verse run</code> 
+open in a second window while working on your site. Then every time you run <code>verse build</code> you only need to refresh the page in 
+your browser.</p>
+
+<p>To add additional asset files to your blog posts and/or static pages, e.g. images, you can add a <code>content</code> and/or <code>static</code> 
+directories in your project's root directory. The path you should use to reference your files should be either <code>/content</code> or <code>/static</code>, 
+as applies.</p>
 </div>
 <footer>
 	<nav><li><a href="http://github.com/jhunt/verse">code</a>
